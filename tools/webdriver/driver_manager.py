@@ -24,3 +24,7 @@ class DriverManger(metaclass=Singleton):
             self._driver = None
 
         type(self).clear_instance()
+
+
+def driver() -> WebDriver:
+    return DriverManger().get_driver()
