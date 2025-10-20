@@ -37,7 +37,8 @@ class Settings(BaseSettings):
     base_url: HttpUrl
     browsers_config: BrowsersConfig
 
+    def get_base_url(self):
+        return f"{self.base_url}"
+
 
 settings = Settings()
-
-
