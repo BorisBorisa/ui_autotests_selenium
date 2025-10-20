@@ -23,6 +23,8 @@ class BrowsersConfig(BaseSettings):
     firefox_config: FirefoxConfig
     page_load_strategy: str
     page_load_timeout: int
+    wait_timeout: float
+    wait_poll_frequency: float
 
 
 class Settings(BaseSettings):
