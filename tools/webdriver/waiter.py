@@ -1,4 +1,6 @@
+from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.remote.webelement import WebElement
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -29,6 +31,18 @@ class Waiter:
 
     @staticmethod
     def have_text(locator, text):
-        return Waiter._wait().until(
+        Waiter._wait().until(
             EC.text_to_be_present_in_element(locator, text)
+        )
+
+    @staticmethod
+    def url_matches(pattern: str):
+        Waiter._wait().until(
+            EC.url_matches(pattern)
+        )
+
+    @staticmethod
+    def alert_is_present() -> Alert:
+        return Waiter._wait().until(
+            EC.alert_is_present()
         )
