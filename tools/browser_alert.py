@@ -27,3 +27,6 @@ class BrowserAlert:
     @staticmethod
     def get_alert_text() -> str:
         return Waiter().alert_is_present().text
+
+    def check_alert_text(self, text: str):
+        assert self.get_alert_text() == text, "!!!!!!"
