@@ -3,6 +3,7 @@ from abc import ABC, abstractmethod
 from selenium.webdriver.common.by import ByType
 
 from tools.webdriver.waiter import Waiter
+from tools.webdriver.driver_manager import driver
 
 
 class BaseElement(ABC):
@@ -32,3 +33,8 @@ class BaseElement(ABC):
     def check_have_text(self, text: str, **kwargs):
         locator = self.get_locator(**kwargs)
         Waiter.have_text(locator, text)
+
+    def get_attr(self, attr: str, **kwargs) -> str | None:
+        locator = self.get_locator(**kwargs)
+        Waiter.have_attr(locator, attr)
+        return driver().find_element(*locator).get_attribute(attr)
