@@ -25,3 +25,12 @@ class BrowserWindowsPage(BasePage):
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Browser Windows")
+
+    def click_new_tab_button(self):
+        self.new_tab_button.click()
+
+    def click_new_window_button(self):
+        self.new_window_button.click()
+
+    def click_new_window_message_button(self):
+        self.new_window_message_button.click()
