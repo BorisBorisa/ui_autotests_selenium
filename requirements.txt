@@ -3,3 +3,5 @@ selenium==4.37.0
 
 pydantic==2.12.3
 pydantic-settings==2.11.0
+
+faker==37.12.0
