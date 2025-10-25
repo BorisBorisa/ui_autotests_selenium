@@ -66,5 +66,15 @@ class TableComponent:
 
         return result
 
-    def delete_row(self, row_id: str):
+    def user_in_table(self, user: WebTableRow) -> bool:
+        rows = self.get_all_rows()
+        return user in rows
+
+    def check_user_present_in_table(self, user: WebTableRow):
+        assert self.user_in_table(user)
+
+    def assert_user_not_present_in_table(self, user: WebTableRow):
+        assert not self.user_in_table(user)
+
+    def delete_row(self, row_id: int):
         self.row_delete_button.click(id=row_id)
