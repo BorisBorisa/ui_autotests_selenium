@@ -7,9 +7,9 @@ from tools.fakers import fake
 class WebTableRow(BaseModel):
     first_name: str = Field(default_factory=fake.first_name)
     last_name: str = Field(default_factory=fake.last_name)
-    age: str = Field(default_factory=fake.age)
+    age: str = Field(default_factory=lambda: str(fake.age()))
     email: str = Field(default_factory=fake.email)
-    salary: str = Field(default_factory=fake.salary)
+    salary: str = Field(default_factory=lambda: str(fake.salary()))
     department: str = Field(default_factory=fake.word)
     user_id: int | None = None
 
