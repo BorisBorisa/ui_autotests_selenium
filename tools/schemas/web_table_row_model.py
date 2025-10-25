@@ -1,15 +1,16 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from functools import total_ordering
+from tools.fakers import fake
 
 
 @total_ordering
 class WebTableRow(BaseModel):
-    first_name: str
-    last_name: str
-    age: str
-    email: str
-    salary: str
-    department: str
+    first_name: str = Field(default_factory=fake.first_name)
+    last_name: str = Field(default_factory=fake.last_name)
+    age: str = Field(default_factory=fake.age)
+    email: str = Field(default_factory=fake.email)
+    salary: str = Field(default_factory=fake.salary)
+    department: str = Field(default_factory=fake.word)
     index: int | None = None
 
     def __eq__(self, other):
