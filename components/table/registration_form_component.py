@@ -2,6 +2,8 @@ from elements.text import Text
 from elements.input import Input
 from elements.button import Button
 
+from tools.schemas.web_table_row_model import WebTableRow
+
 
 class RegistrationFormComponent:
     def __init__(self):
@@ -17,25 +19,17 @@ class RegistrationFormComponent:
         self.close_button = Button("close", "xpath", '//button[@class="close"]')
         self.submit_button = Button("submit", "id", "submit")
 
-    def is_page_opened(self):
+    def is_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Registration Form")
 
-    def fill(
-            self,
-            first_name: str,
-            last_name: str,
-            email: str,
-            age: int,
-            salary: str,
-            department: str
-    ):
-        self.first_name_input.fill(first_name)
-        self.last_name_input.fill(last_name)
-        self.email_input.fill(email)
-        self.age_input.fill(str(age))
-        self.salary_input.fill(salary)
-        self.department_input.fill(department)
+    def fill(self, user_data: WebTableRow):
+        self.first_name_input.fill(user_data.first_name)
+        self.last_name_input.fill(user_data.last_name)
+        self.email_input.fill(user_data.email)
+        self.age_input.fill(user_data.age)
+        self.salary_input.fill(user_data.salary)
+        self.department_input.fill(user_data.department)
 
     def click_close_button(self):
         self.close_button.click()
