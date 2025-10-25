@@ -36,6 +36,12 @@ class Waiter:
         )
 
     @staticmethod
+    def have_attr(locator, attr):
+        Waiter._wait().until(
+            EC.element_attribute_to_include(locator, attr)
+        )
+
+    @staticmethod
     def url_matches(pattern: str):
         Waiter._wait().until(
             EC.url_matches(pattern)
