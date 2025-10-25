@@ -10,3 +10,8 @@ class Input(BaseElement):
         locator = self.get_locator(**kwargs)
         element = Waiter.clickable(locator)
         element.send_keys(text)
+
+    def clear(self, **kwargs):
+        locator = self.get_locator(**kwargs)
+        element = Waiter.clickable(locator)
+        element.clear()
