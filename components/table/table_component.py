@@ -17,8 +17,9 @@ class TableComponent:
         )
 
         self.rows_locator = (By.XPATH, '//*[@class="rt-tbody"]//*[@role="row" and not(contains(@class, "-padRow"))]')
-        self.row_delete_button = Button("delete row", By.ID, 'delete-record-{id}')
+        self.rows_delete_button_locator = (By.XPATH, '//*[@class="rt-tbody"]//*[@title="Delete"]')
 
+        self.row_delete_button = Button("delete row", By.ID, 'delete-record-{id}')
 
     def click_first_name_column_header(self):
         self.column_header.click(name=ColumnHeader.FIRST_NAME)
@@ -43,15 +44,18 @@ class TableComponent:
 
     def get_all_rows(self) -> list[WebTableRow]:
         rows = driver().find_elements(*self.rows_locator)
+        rows_delete_buttons = driver().find_elements(*self.rows_delete_button_locator)
 
         result = []
 
-        for index, row in enumerate(rows):
+        for idx, row in enumerate(rows):
+            user_id = int(rows_delete_buttons[idx].get_attribute("id").split("-")[-1])
+
             row_text = row.text.split("\n")
             f_name, l_name, age, email, salary, department = row_text
 
             result.append(WebTableRow(
-                index=index,
+                user_id=user_id,
                 first_name=f_name,
                 last_name=l_name,
                 email=email,
