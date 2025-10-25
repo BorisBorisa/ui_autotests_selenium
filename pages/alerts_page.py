@@ -26,7 +26,7 @@ class AlertsPage(BasePage):
         self.confirm_result = Text("confirm result", "id", "confirmResult")
         self.prompt_result = Text("prompt result", "id", "promptResult")
 
-        self.browser_alert = BrowserAlert
+        self.browser_alert = BrowserAlert()
 
     def is_page_opened(self):
         self.title.check_visible()
