@@ -11,7 +11,7 @@ class WebTableRow(BaseModel):
     email: str = Field(default_factory=fake.email)
     salary: str = Field(default_factory=fake.salary)
     department: str = Field(default_factory=fake.word)
-    index: int | None = None
+    user_id: int | None = None
 
     def __eq__(self, other):
         if not isinstance(other, WebTableRow):
