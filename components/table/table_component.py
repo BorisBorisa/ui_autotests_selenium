@@ -78,3 +78,10 @@ class TableComponent:
 
     def delete_row(self, row_id: int):
         self.row_delete_button.click(id=row_id)
+
+    def delete_user(self, user: WebTableRow):
+        rows = self.get_all_rows()
+
+        if user in rows:
+            user_id = rows[rows.index(user)].user_id
+            self.delete_row(user_id)
