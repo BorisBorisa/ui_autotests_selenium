@@ -6,7 +6,7 @@ from tools.webdriver.driver_manager import DriverManger
 from config import settings
 
 
-@pytest.fixture(scope="session", autouse=True, params=settings.browsers)
+@pytest.fixture(autouse=True, params=settings.browsers)
 def driver(request: SubRequest):
     DriverManger().init(request.param)
     yield
