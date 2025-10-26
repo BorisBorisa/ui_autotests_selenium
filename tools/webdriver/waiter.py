@@ -4,6 +4,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from tools.webdriver.custom_expected_conditions import text_to_be_equal_to_element_attribute
 from tools.webdriver.driver_manager import driver
 from config import settings
 
@@ -39,6 +40,14 @@ class Waiter:
     def have_attr(locator, attr):
         Waiter._wait().until(
             EC.element_attribute_to_include(locator, attr)
+        )
+
+    @staticmethod
+    def have_attr_text(locator, attr, text):
+        element = driver().find_element(*locator)
+
+        WebDriverWait(driver(), 15, 0.05).until(
+            text_to_be_equal_to_element_attribute(element, attr, text)
         )
 
     @staticmethod
