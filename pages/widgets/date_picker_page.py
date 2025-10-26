@@ -18,7 +18,7 @@ class DatePickerPage(BasePage):
         self.header = HeaderComponent()
         self.left_panel = LeftPanelComponent()
 
-        self.title = Text("title", By.ID, '//*[@id="datePickerContainer"]/h1')
+        self.title = Text("title", By.XPATH, '//*[@id="datePickerContainer"]/h1')
 
         self.date_picker = DatePickerComponent()
         self.date_time_picker = DateTimePickerComponent()
