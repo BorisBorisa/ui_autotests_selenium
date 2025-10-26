@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 from pages.base_page import BasePage
 
 from components.navigation.header_component import HeaderComponent
@@ -16,15 +18,15 @@ class AlertsPage(BasePage):
         self.header = HeaderComponent()
         self.left_panel = LeftPanelComponent()
 
-        self.title = Text("title", "xpath", '//*[@id="javascriptAlertsWrapper"]/h1')
+        self.title = Text("title", By.XPATH, '//*[@id="javascriptAlertsWrapper"]/h1')
 
-        self.alert_button = Button("alert", "id", "alertButton")
-        self.timer_alert_button = Button("timer alert", "id", "timerAlertButton")
-        self.confirm_button = Button("confirm", "id", "confirmButton")
-        self.prompt_button = Button("prompt", "id", "promtButton")
+        self.alert_button = Button("alert", By.ID, "alertButton")
+        self.timer_alert_button = Button("timer alert", By.ID, "timerAlertButton")
+        self.confirm_button = Button("confirm", By.ID, "confirmButton")
+        self.prompt_button = Button("prompt", By.ID, "promtButton")
 
-        self.confirm_result = Text("confirm result", "id", "confirmResult")
-        self.prompt_result = Text("prompt result", "id", "promptResult")
+        self.confirm_result = Text("confirm result", By.ID, "confirmResult")
+        self.prompt_result = Text("prompt result", By.ID, "promptResult")
 
         self.browser_alert = BrowserAlert()
 

@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 from pages.base_page import BasePage
 
 from components.navigation.header_component import HeaderComponent
@@ -14,11 +16,11 @@ class NestedFramesPage(BasePage):
         self.header = HeaderComponent()
         self.left_panel = LeftPanelComponent()
 
-        self.title = Text("title", "xpath", '//*[@id="framesWrapper"]/h1')
+        self.title = Text("title", By.XPATH, '//*[@id="framesWrapper"]/h1')
 
         self.nested_frame = NestedFrameComponent(
-            frame_locator=("id", "frame1"),
-            nested_frame_locator=("xpath", "//iframe")
+            frame_locator=(By.ID, "frame1"),
+            nested_frame_locator=(By.XPATH, "//iframe")
         )
 
     def is_page_opened(self):

@@ -1,10 +1,10 @@
-from pages.base_page import BasePage
-
 from datetime import datetime
+from selenium.webdriver.common.by import By
+
+from pages.base_page import BasePage
 
 from components.navigation.header_component import HeaderComponent
 from components.navigation.left_panel_component import LeftPanelComponent
-
 from components.date_picker.date_picker_input_component import DatePickerComponent
 from components.date_picker.date_time_picker_input_component import DateTimePickerComponent
 
@@ -18,7 +18,7 @@ class DatePickerPage(BasePage):
         self.header = HeaderComponent()
         self.left_panel = LeftPanelComponent()
 
-        self.title = Text("title", "xpath", '//*[@id="datePickerContainer"]/h1')
+        self.title = Text("title", By.ID, '//*[@id="datePickerContainer"]/h1')
 
         self.date_picker = DatePickerComponent()
         self.date_time_picker = DateTimePickerComponent()

@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 from pages.base_page import BasePage
 
 from components.navigation.header_component import HeaderComponent
@@ -14,10 +16,10 @@ class FramesPage(BasePage):
         self.header = HeaderComponent()
         self.left_panel = LeftPanelComponent()
 
-        self.title = Text("title", "xpath", '//*[@id="framesWrapper"]/h1')
+        self.title = Text("title", By.XPATH, '//*[@id="framesWrapper"]/h1')
 
-        self.frame1 = FrameComponent(("id", "frame1"))
-        self.frame2 = FrameComponent(("id", "frame2"))
+        self.frame1 = FrameComponent((By.ID, "frame1"))
+        self.frame2 = FrameComponent((By.ID, "frame2"))
 
     def is_page_opened(self):
         self.title.check_visible()

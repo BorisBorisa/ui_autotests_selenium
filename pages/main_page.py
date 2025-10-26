@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 from pages.base_page import BasePage
 
 from components.navigation.header_component import HeaderComponent
@@ -13,8 +15,10 @@ class MainPage(BasePage):
         super().__init__()
 
         self.header = HeaderComponent()
-        self.banner = Image("banner", "xpath", '//*[@class="home-banner"]//img')
-        self.category_card_button = Button("category card", "xpath", '//*[@class="category-cards"]//*[text()="{text}"]')
+        self.banner = Image("banner", By.XPATH, '//*[@class="home-banner"]//img')
+        self.category_card_button = Button(
+            "category card", By.XPATH, '//*[@class="category-cards"]//*[text()="{text}"]'
+        )
 
     def is_page_opened(self):
         self.banner.check_visible()
