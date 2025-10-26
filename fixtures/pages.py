@@ -9,6 +9,7 @@ from pages.alerts_frame_windows.frames_page import FramesPage
 from pages.alerts_frame_windows.nested_frames_page import NestedFramesPage
 
 from pages.elements.links_page import LinksPage
+from pages.elements.web_tables_page import WebTablesPage
 
 from pages.widgets.date_picker_page import DatePickerPage
 from pages.widgets.progress_bar_page import ProgressBarPage
@@ -48,6 +49,11 @@ def nested_frames_page() -> NestedFramesPage:
 @pytest.fixture
 def links_page() -> LinksPage:
     return LinksPage()
+
+
+@pytest.fixture
+def web_tables_page() -> WebTablesPage:
+    return WebTablesPage()
 
 
 @pytest.fixture
