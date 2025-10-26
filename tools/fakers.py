@@ -38,7 +38,7 @@ class Fake:
         """
         return self.faker.first_name()
 
-    def integer(self, start: int = 1, end: int = 99) -> int:
+    def integer(self, start: int = 1, end: int = 100) -> int:
         """
         Генерирует случайное целое число в заданном диапазоне.
 
