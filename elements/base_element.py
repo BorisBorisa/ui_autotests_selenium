@@ -1,3 +1,5 @@
+import allure
+
 from abc import ABC, abstractmethod
 
 from selenium.webdriver.common.by import ByType
@@ -19,22 +21,37 @@ class BaseElement(ABC):
 
     def get_locator(self, **kwargs) -> tuple[ByType, str]:
         locator = self.locator.format(**kwargs)
-        return self.locator_type, locator
+        step = f'Getting locator "{locator}"'
+
+        with allure.step(step):
+            return self.locator_type, locator
 
     def click(self, **kwargs):
         locator = self.get_locator(**kwargs)
-        element = Waiter.clickable(locator)
-        element.click()
+        step = f'Click {self.type_of} "{self.name}"'
+
+        with allure.step(step):
+            element = Waiter.clickable(locator)
+            element.click()
 
     def check_visible(self, **kwargs):
         locator = self.get_locator(**kwargs)
-        Waiter.visible(locator)
+        step = f'Checking that {self.type_of} "{self.name}" is visible'
+
+        with allure.step(step):
+            Waiter.visible(locator)
 
     def check_have_text(self, text: str, **kwargs):
         locator = self.get_locator(**kwargs)
-        Waiter.have_text(locator, text)
+        step = f'Checking that {self.type_of} "{self.name}" has text "{text}"'
+
+        with allure.step(step):
+            Waiter.have_text(locator, text)
 
     def get_attr(self, attr: str, **kwargs) -> str | None:
         locator = self.get_locator(**kwargs)
-        Waiter.have_attr(locator, attr)
-        return driver().find_element(*locator).get_attribute(attr)
+        step = f'Getting {self.type_of} "{self.name}" attribute "{attr}" value'
+
+        with allure.step(step):
+            Waiter.have_attr(locator, attr)
+            return driver().find_element(*locator).get_attribute(attr)
