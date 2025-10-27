@@ -4,7 +4,7 @@ from pages.base_page import BasePage
 
 from components.navigation.header_component import HeaderComponent
 from components.navigation.left_panel_component import LeftPanelComponent
-from components.nested_frame_component import NestedFrameComponent
+from components.alerts_frame_windows.nested_frame_component import NestedFrameComponent
 
 from elements.text import Text
 

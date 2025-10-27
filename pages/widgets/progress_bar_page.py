@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
 
-from components.progress_bar_component import ProgressBarComponent
+from components.widgets.progress_bar_component import ProgressBarComponent
 from components.navigation.header_component import HeaderComponent
 from components.navigation.left_panel_component import LeftPanelComponent
 

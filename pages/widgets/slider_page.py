@@ -4,7 +4,7 @@ from pages.base_page import BasePage
 
 from components.navigation.header_component import HeaderComponent
 from components.navigation.left_panel_component import LeftPanelComponent
-from components.slider_component import SliderComponent
+from components.widgets.slider_component import SliderComponent
 
 from elements.text import Text
 
