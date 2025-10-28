@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from tools.webdriver.waiter import Waiter
@@ -11,6 +13,7 @@ class SliderComponent:
         self.slider = Input("slider", By.XPATH, '//*[@class="range-slider range-slider--primary"]')
         self.value = Input("value", By.ID, "sliderValue")
 
+    @allure.step("Set slider to value: {value}")
     def set_slider_to(self, value: int) -> None:
         element = Waiter.visible(self.slider.get_locator())
 
@@ -26,6 +29,7 @@ class SliderComponent:
 
         Action.drag_and_drop_by_offset(element, position, 0)
 
+    @allure.step("Get slider value")
     def get_value(self) -> int:
         value = self.value.get_attr("value")
         return int(value)

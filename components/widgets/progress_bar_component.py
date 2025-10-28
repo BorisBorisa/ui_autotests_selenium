@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from tools.webdriver.driver_manager import driver
@@ -11,6 +13,7 @@ class ProgressBarComponent:
         self.bar_value_locator = (By.XPATH, '//*[@id="progressBar"]/*')
         self.bar_value_attr = "aria-valuenow"
 
+    @allure.step("Set progress bar to value: {value}")
     def set_progres_bar_to(self, value: int):
         btn_elem = driver().find_element(*self.start_stop_button_locator)
         bar_val_elem = driver().find_element(*self.bar_value_locator)
@@ -22,6 +25,7 @@ class ProgressBarComponent:
         Waiter.have_attr_text(self.bar_value_locator, self.bar_value_attr, str(value))
         btn_elem.click()
 
+    @allure.step("Get progress bar value")
     def get_value(self) -> int:
         bar_val_elem = driver().find_element(*self.bar_value_locator)
         return int(bar_val_elem.get_attribute(self.bar_value_attr))
