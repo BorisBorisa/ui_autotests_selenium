@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -19,6 +21,7 @@ class LinksPage(BasePage):
         self.title = Text("title", By.XPATH, '//*[@id="linkWrapper"]/h1')
         self.home_link = Link("home", By.ID, "simpleLink")
 
+    @allure.step("Check Links page is opened")
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Links")

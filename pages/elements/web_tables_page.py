@@ -1,3 +1,5 @@
+import allure
+
 from pages.base_page import BasePage
 
 from components.navigation.header_component import HeaderComponent
@@ -25,6 +27,7 @@ class WebTablesPage(BasePage):
         self.registration_form = RegistrationFormComponent()
         self.table = TableComponent()
 
+    @allure.step("Check Web Tables page is opened")
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Web Tables")
