@@ -1,3 +1,5 @@
+import allure
+
 from datetime import datetime
 from selenium.webdriver.common.by import By
 
@@ -23,6 +25,7 @@ class DatePickerPage(BasePage):
         self.date_picker = DatePickerComponent()
         self.date_time_picker = DateTimePickerComponent()
 
+    @allure.step("Check Date picker page is opened")
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Date Picker")

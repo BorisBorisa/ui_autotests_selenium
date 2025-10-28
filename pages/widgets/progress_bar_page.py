@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -22,11 +24,13 @@ class ProgressBarPage(BasePage):
 
         self.progress_bar = ProgressBarComponent()
 
+    @allure.step("Check Progress bar page is opened")
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Progress Bar")
 
-    def check_bar_value_matches_expected(self, expected_value: int):
+    @allure.step("Check progress bar value matches expected {expected_value}")
+    def check_progress_bar_value_matches_expected(self, expected_value: int):
         actual_value = self.progress_bar.get_value()
 
         assert actual_value == expected_value, (

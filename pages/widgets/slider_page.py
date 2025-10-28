@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -20,10 +22,12 @@ class SliderPage(BasePage):
 
         self.slider = SliderComponent()
 
+    @allure.step("Check Slider page is opened")
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Slider")
 
+    @allure.step("Check slider input value matches expected {expected_value}")
     def check_slider_input_value_matches_expected(self, expected_value: int):
         actual_value = self.slider.get_value()
 
