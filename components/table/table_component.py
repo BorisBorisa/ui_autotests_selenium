@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from tools.enums.column_header_enum import ColumnHeader
@@ -42,6 +44,7 @@ class TableComponent:
     def click_action_column_header(self):
         self.column_header.click(name=ColumnHeader.ACTION)
 
+    @allure.step("Getting all tabel rows")
     def get_all_rows(self) -> list[WebTableRow]:
         rows = driver().find_elements(*self.rows_locator)
         rows_delete_buttons = driver().find_elements(*self.rows_delete_button_locator)
@@ -70,15 +73,19 @@ class TableComponent:
         rows = self.get_all_rows()
         return user in rows
 
+    @allure.step("Check user is present in table")
     def check_user_present_in_table(self, user: WebTableRow):
         assert self.user_in_table(user)
 
-    def assert_user_not_present_in_table(self, user: WebTableRow):
+    @allure.step("Check user is NOT present in table")
+    def check_user_not_present_in_table(self, user: WebTableRow):
         assert not self.user_in_table(user)
 
+    @allure.step("Delete table row by ID: {row_id}")
     def delete_row(self, row_id: int):
         self.row_delete_button.click(id=row_id)
 
+    @allure.step("Delete user from table: {user}")
     def delete_user(self, user: WebTableRow):
         rows = self.get_all_rows()
 

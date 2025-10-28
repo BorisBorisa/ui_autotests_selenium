@@ -1,3 +1,5 @@
+import allure
+
 from elements.text import Text
 from elements.input import Input
 from elements.button import Button
@@ -19,10 +21,12 @@ class RegistrationFormComponent:
         self.close_button = Button("close", "xpath", '//button[@class="close"]')
         self.submit_button = Button("submit", "id", "submit")
 
+    @allure.step("Check registration form is opened")
     def is_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Registration Form")
 
+    @allure.step("Fill registration form")
     def fill(self, user_data: WebTableRow):
         self.first_name_input.fill(user_data.first_name)
         self.last_name_input.fill(user_data.last_name)
