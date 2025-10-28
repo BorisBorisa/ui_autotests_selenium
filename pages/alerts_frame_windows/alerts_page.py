@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -30,6 +32,7 @@ class AlertsPage(BasePage):
 
         self.browser_alert = BrowserAlert()
 
+    @allure.step("Check Alerts page is opened")
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Alerts")

@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -22,6 +24,7 @@ class BrowserWindowsPage(BasePage):
         self.new_window_button = Button("new window", By.ID, "windowButton")
         self.new_window_message_button = Button("new window message", By.ID, "messageWindowButton")
 
+    @allure.step("Check Browser Windows page is opened")
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Browser Windows")

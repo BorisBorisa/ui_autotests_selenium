@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -21,10 +23,12 @@ class FramesPage(BasePage):
         self.frame1 = FrameComponent((By.ID, "frame1"))
         self.frame2 = FrameComponent((By.ID, "frame2"))
 
+    @allure.step("Check Frames page is opened")
     def is_page_opened(self):
         self.title.check_visible()
         self.title.check_have_text("Frames")
 
+    @allure.step("Check Frames headings are equal")
     def check_frames_headings_are_equal(self):
         frame1_text = self.frame1.get_heading_text()
         self.frame2.check_heading_text(frame1_text)
