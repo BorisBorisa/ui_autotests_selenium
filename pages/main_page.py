@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
@@ -20,6 +22,7 @@ class MainPage(BasePage):
             "category card", By.XPATH, '//*[@class="category-cards"]//*[text()="{text}"]'
         )
 
+    @allure.step("Check Main page is opened")
     def is_page_opened(self):
         self.banner.check_visible()
 
