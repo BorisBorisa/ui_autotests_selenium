@@ -1,3 +1,5 @@
+import allure
+
 from abc import ABC, abstractmethod
 from typing import Type
 from enum import Enum
@@ -41,6 +43,7 @@ class ElementsGroupComponent(BaseElementGroupComponent):
     def click(self):
         self.group_header.click(header_text=Category.ELEMENTS)
 
+    @allure.step("Check elements menu items visible")
     def check_menu_visible(self):
         self.check_visible(Elements)
 
@@ -76,6 +79,7 @@ class FormsGroupComponent(BaseElementGroupComponent):
     def click(self):
         self.group_header.click(header_text=Category.FORMS)
 
+    @allure.step("Check forms group menu items visible")
     def check_menu_visible(self):
         self.check_visible(Forms)
 
@@ -87,6 +91,7 @@ class AlertsFramesWindowsGroupComponent(BaseElementGroupComponent):
     def click(self):
         self.group_header.click(header_text=Category.ALERTS_FRAME_WINDOWS)
 
+    @allure.step("Check alerts frames and windows menu items visible")
     def check_menu_visible(self):
         self.check_visible(AlertsFrameWindows)
 
@@ -110,6 +115,7 @@ class WidgetsGroupComponent(BaseElementGroupComponent):
     def click(self):
         self.group_header.click(header_text=Category.WIDGETS)
 
+    @allure.step("Check widgets menu items visible")
     def check_menu_visible(self):
         self.check_visible(Widgets)
 
@@ -145,6 +151,7 @@ class InteractionsGroupComponent(BaseElementGroupComponent):
     def click(self):
         self.group_header.click(header_text=Category.INTERACTIONS)
 
+    @allure.step("Check interactions group menu items visible")
     def check_menu_visible(self):
         self.check_visible(Interactions)
 
@@ -168,6 +175,7 @@ class BookStoreApplicationGroupComponent(BaseElementGroupComponent):
     def click(self):
         self.group_header.click(header_text=Category.BOOK_STORE_APPLICATION)
 
+    @allure.step("Check bookstore application menu items visible")
     def check_menu_visible(self):
         self.check_visible(BookStoreApplication)
 
