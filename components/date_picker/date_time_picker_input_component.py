@@ -24,7 +24,7 @@ class DateTimePickerComponent:
         value = self.date_picker_input.get_attr("value")
         return datetime.strptime(value, "%B %d, %Y %I:%M %p")
 
-    @allure.step("Check that selected datetime equals expected datetime {expected_datetime:%d %B %Y %H:%M}")
+    @allure.step("Check that selected datetime equals expected datetime {expected_datetime}")
     def check_current_date_matches_expected(self, expected_datetime: datetime):
         actual_datetime = self.get_selected_datetime()
         expected_datetime = expected_datetime.replace(second=0, microsecond=0)

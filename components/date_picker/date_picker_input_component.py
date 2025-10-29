@@ -34,7 +34,7 @@ class DatePickerComponent(BaseComponent):
         value = self.date_picker_input.get_attr("value")
         return datetime.strptime(value, "%m/%d/%Y").date()
 
-    @allure.step("Select date {target_date:%d %B %Y} via calendar")
+    @allure.step("Select date {target_date} via calendar")
     def select_date_via_calendar(self, target_date: datetime):
         self.click_date_picker_input()
 
@@ -45,7 +45,7 @@ class DatePickerComponent(BaseComponent):
         day_index = target_date.weekday() + 2
         self.day.click(week_index=week_index, day_index=day_index)
 
-    @allure.step("Check that selected date equals expected date {expected_date:%d %B %Y}")
+    @allure.step("Check that selected date equals expected date {expected_date}")
     def check_current_date_matches_expected(self, expected_date: datetime):
         actual_date = self.get_selected_date()
         expected_date = expected_date.date()
