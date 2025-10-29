@@ -1,6 +1,6 @@
 from enum import Enum
 
-from pydantic import HttpUrl
+from pydantic import HttpUrl, BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -10,21 +10,30 @@ class Browser(str, Enum):
     FIREFOX = "firefox"
 
 
-class ChromiumConfig(BaseSettings):
+class ChromiumConfig(BaseModel):
     options: list[str]
 
 
-class FirefoxConfig(BaseSettings):
+class FirefoxConfig(BaseModel):
     options: list[str]
 
 
-class BrowsersConfig(BaseSettings):
+class BrowsersConfig(BaseModel):
     chromium_config: ChromiumConfig
     firefox_config: FirefoxConfig
     page_load_strategy: str
     page_load_timeout: int
     wait_timeout: float
     wait_poll_frequency: float
+
+
+class TestCase1(BaseModel):
+    click_alert: str
+    confirm_alert: str
+
+
+class TestData(BaseModel):
+    test_case1: TestCase1
 
 
 class Settings(BaseSettings):
@@ -38,6 +47,7 @@ class Settings(BaseSettings):
     browsers: list[Browser]
     base_url: HttpUrl
     browsers_config: BrowsersConfig
+    test_data: TestData
 
     def get_base_url(self):
         return f"{self.base_url}"
