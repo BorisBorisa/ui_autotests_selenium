@@ -2,6 +2,9 @@ import allure
 
 from tools.webdriver.driver_manager import driver
 from tools.browser_tools.waiter import Waiter
+from tools.logger import get_logger
+
+logger = get_logger("BASE_PAGE")
 
 
 class BasePage:
@@ -13,6 +16,7 @@ class BasePage:
         step = f"Opening the url '{url}'"
 
         with allure.step(step):
+            logger.info(step)
             driver().get(url)
 
     @staticmethod
@@ -21,6 +25,7 @@ class BasePage:
         step = f"Reloading page with url '{url}'"
 
         with allure.step(step):
+            logger.info(step)
             driver().refresh()
 
     @staticmethod
@@ -28,4 +33,5 @@ class BasePage:
         step = f'Checking that current url matches "{expected_url}"'
 
         with allure.step(step):
+            logger.info(step)
             Waiter.url_matches(expected_url)
