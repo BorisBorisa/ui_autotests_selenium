@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 from selenium.webdriver.common.by import ByType
 
-from tools.webdriver.waiter import Waiter
+from tools.browser_tools.waiter import Waiter
 from tools.webdriver.driver_manager import driver
 from tools.logger import get_logger
 

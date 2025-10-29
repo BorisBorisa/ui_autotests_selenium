@@ -2,8 +2,8 @@ import allure
 
 from selenium.webdriver.common.by import By
 
-from tools.webdriver.waiter import Waiter
-from tools.webdriver.action import Action
+from tools.browser_tools.waiter import Waiter
+from tools.browser_tools.action import Action
 
 from elements.input import Input
 

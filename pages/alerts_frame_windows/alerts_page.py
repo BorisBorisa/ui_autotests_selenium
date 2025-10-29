@@ -10,7 +10,7 @@ from components.navigation.left_panel_component import LeftPanelComponent
 from elements.text import Text
 from elements.button import Button
 
-from tools.browser_alert import BrowserAlert
+from tools.browser_tools.browser_alert import BrowserAlert
 
 
 class AlertsPage(BasePage):

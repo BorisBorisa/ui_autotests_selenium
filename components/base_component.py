@@ -1,6 +1,6 @@
 import allure
 
-from tools.webdriver.waiter import Waiter
+from tools.browser_tools.waiter import Waiter
 
 
 class BaseComponent:

@@ -4,7 +4,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from tools.webdriver.custom_expected_conditions import text_to_be_equal_to_element_attribute
+from tools.browser_tools.custom_expected_conditions import text_to_be_equal_to_element_attribute
 from tools.webdriver.driver_manager import driver
 from config import settings
 

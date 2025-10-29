@@ -1,7 +1,7 @@
 from selenium.common import NoAlertPresentException
 
 from tools.webdriver.driver_manager import driver
-from tools.webdriver.waiter import Waiter
+from tools.browser_tools.waiter import Waiter
 
 
 class BrowserAlert:
