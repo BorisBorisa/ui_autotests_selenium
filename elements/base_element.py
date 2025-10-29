@@ -6,6 +6,9 @@ from selenium.webdriver.common.by import ByType
 
 from tools.webdriver.waiter import Waiter
 from tools.webdriver.driver_manager import driver
+from tools.logger import get_logger
+
+logger = get_logger("BASE_ELEMENT")
 
 
 class BaseElement(ABC):
@@ -24,6 +27,7 @@ class BaseElement(ABC):
         step = f'Getting locator "{locator}"'
 
         with allure.step(step):
+            logger.info(step)
             return self.locator_type, locator
 
     def click(self, **kwargs):
@@ -31,6 +35,7 @@ class BaseElement(ABC):
         step = f'Click {self.type_of} "{self.name}"'
 
         with allure.step(step):
+            logger.info(step)
             element = Waiter.clickable(locator)
             element.click()
 
@@ -39,6 +44,7 @@ class BaseElement(ABC):
         step = f'Checking that {self.type_of} "{self.name}" is visible'
 
         with allure.step(step):
+            logger.info(step)
             Waiter.visible(locator)
 
     def check_have_text(self, text: str, **kwargs):
@@ -46,6 +52,7 @@ class BaseElement(ABC):
         step = f'Checking that {self.type_of} "{self.name}" has text "{text}"'
 
         with allure.step(step):
+            logger.info(step)
             Waiter.have_text(locator, text)
 
     def get_attr(self, attr: str, **kwargs) -> str | None:
@@ -53,5 +60,6 @@ class BaseElement(ABC):
         step = f'Getting {self.type_of} "{self.name}" attribute "{attr}" value'
 
         with allure.step(step):
+            logger.info(step)
             Waiter.have_attr(locator, attr)
             return driver().find_element(*locator).get_attribute(attr)

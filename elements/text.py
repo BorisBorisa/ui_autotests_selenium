@@ -3,6 +3,9 @@ import allure
 from elements.base_element import BaseElement
 
 from tools.webdriver.waiter import Waiter
+from tools.logger import get_logger
+
+logger = get_logger("TEXT")
 
 
 class Text(BaseElement):
@@ -15,5 +18,6 @@ class Text(BaseElement):
         step = f'Getting {self.type_of} "{self.name}" inner text'
 
         with allure.step(step):
+            logger.info(step)
             element = Waiter.visible(locator)
             return element.text
