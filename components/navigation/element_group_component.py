@@ -18,7 +18,7 @@ class BaseElementGroupComponent(ABC):
         self.group_header = Text(
             "group header",
             "xpath",
-            '//*[text()="{header_text}"]/ancestor::*[@class="group-header"]'
+            '//*[text()="{header_text}"]/ancestor::*[@class="header-wrapper"]'
         )
         self.group_element_item = Button(
             "group element",
