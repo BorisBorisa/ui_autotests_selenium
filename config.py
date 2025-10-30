@@ -31,9 +31,14 @@ class TestCase1(BaseModel):
     click_alert: str
     confirm_alert: str
 
+class TestCase2(BaseModel):
+    parent_frame_text: str
+    nested_frame_text: str
+
 
 class TestData(BaseModel):
     test_case1: TestCase1
+    test_case2: TestCase2
 
 
 class Settings(BaseSettings):
