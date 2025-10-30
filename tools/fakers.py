@@ -1,4 +1,5 @@
 from faker import Faker
+from datetime import datetime
 
 
 class Fake:
@@ -71,6 +72,14 @@ class Fake:
         :return: Случайное слово.
         """
         return self.faker.word()
+
+    def data_time(self) -> datetime:
+        """
+        Генерирует случайную дату и время.
+
+        :return: Случайная дата и время.
+        """
+        return self.faker.date_time()
 
 
 fake = Fake(faker=Faker())
