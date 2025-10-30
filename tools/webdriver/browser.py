@@ -9,6 +9,9 @@ from selenium.webdriver import (
 from selenium.webdriver.remote.webdriver import WebDriver
 
 from config import settings, Browser
+from tools.logger import get_logger
+
+logger = get_logger("BROWSER")
 
 
 class BaseBrowser:
@@ -18,8 +21,6 @@ class BaseBrowser:
         self.browser_config = browser_config
 
     def create_driver(self) -> WebDriver:
-        # Добавить логирование
-
         options = self.options_class()
 
         for arg in self.browser_config.options:
@@ -60,7 +61,8 @@ class EdgeBrowser(BaseBrowser):
         )
 
 
-def get_browser_driver(browser_name: str) -> WebDriver:
+def get_browser_driver(browser_name: Browser) -> WebDriver:
+    logger.info(f"Initializing WebDriver for browser: {browser_name.value}")
     match browser_name:
         case Browser.CHROME:
             return ChromeBrowser().create_driver()
