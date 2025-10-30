@@ -29,7 +29,7 @@ class NestedFrameComponent(BaseComponent):
             driver().switch_to.default_content()
 
     @allure.step('Check that frame text equal expected: "{expected_text}"')
-    def check_frame_text(self, expected_text: str):
+    def check_parent_frame_text(self, expected_text: str):
         with self.in_frame(self.frame_locator):
             self.body_text.check_have_text(expected_text)
 
