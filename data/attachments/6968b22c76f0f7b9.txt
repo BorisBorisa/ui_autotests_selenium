@@ -1,0 +1,35 @@
+INFO     BROWSER:browser.py:65 Initializing WebDriver for browser: firefox
+INFO     BASE_PAGE:base_page.py:19 Opening the url 'https://demoqa.com/'
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="home-banner"]//img"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that image "banner" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="category-cards"]//*[text()="Alerts, Frame & Windows"]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "category card"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[text()="Browser Windows"]/parent::*[contains(@class, "btn")]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "group element"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="browserWindows"]/h1"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="browserWindows"]/h1"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "Browser Windows"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "tabButton"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "new tab"
+INFO     BASE_PAGE:base_page.py:36 Checking that current url matches "/sample"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "sampleHeading"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "sampleHeading"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "This is a sample page"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[text()="Elements"]/ancestor::*[@class="header-wrapper"]"
+INFO     BASE_ELEMENT:base_element.py:38 Click text "group header"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[text()="Links"]/parent::*[contains(@class, "btn")]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "group element"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="linkWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="linkWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "Links"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "simpleLink"
+INFO     BASE_ELEMENT:base_element.py:38 Click link "home"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="home-banner"]//img"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that image "banner" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="linkWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="linkWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "Links"

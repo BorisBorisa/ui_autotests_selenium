@@ -1,0 +1,26 @@
+INFO     BROWSER:browser.py:65 Initializing WebDriver for browser: chrome
+INFO     BASE_PAGE:base_page.py:19 Opening the url 'https://demoqa.com/'
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="home-banner"]//img"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that image "banner" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="category-cards"]//*[text()="Widgets"]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "category card"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[text()="Date Picker"]/parent::*[contains(@class, "btn")]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "group element"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="datePickerContainer"]/h1"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="datePickerContainer"]/h1"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "Date Picker"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "datePickerMonthYearInput"
+INFO     BASE_ELEMENT:base_element.py:63 Getting input "date picker" attribute "value" value
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "dateAndTimePickerInput"
+INFO     BASE_ELEMENT:base_element.py:63 Getting input "date picker" attribute "value" value
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "datePickerMonthYearInput"
+INFO     BASE_ELEMENT:base_element.py:38 Click input "date picker"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "react-datepicker__month-select"
+INFO     SELECT_MENU:select_menu.py:23 Select "October" from select "month"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "react-datepicker__year-select"
+INFO     SELECT_MENU:select_menu.py:23 Select "1985" from select "year"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class = "react-datepicker__month"]//*[contains(@aria-label, "October 19")]"
+INFO     BASE_ELEMENT:base_element.py:38 Click text "day"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "datePickerMonthYearInput"
+INFO     BASE_ELEMENT:base_element.py:63 Getting input "date picker" attribute "value" value

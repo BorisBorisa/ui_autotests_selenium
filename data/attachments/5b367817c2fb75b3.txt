@@ -1,0 +1,21 @@
+INFO     BROWSER:browser.py:65 Initializing WebDriver for browser: chrome
+INFO     BASE_PAGE:base_page.py:19 Opening the url 'https://demoqa.com/'
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="home-banner"]//img"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that image "banner" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="category-cards"]//*[text()="Widgets"]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "category card"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[text()="Slider"]/parent::*[contains(@class, "btn")]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "group element"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//h1"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//h1"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "Slider"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="range-slider range-slider--primary"]"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "sliderValue"
+INFO     BASE_ELEMENT:base_element.py:63 Getting input "value" attribute "value" value
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[text()="Progress Bar"]/parent::*[contains(@class, "btn")]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "group element"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="progressBarContainer"]/h1"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="progressBarContainer"]/h1"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "Progress Bar"

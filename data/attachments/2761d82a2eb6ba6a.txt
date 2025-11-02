@@ -1,0 +1,26 @@
+INFO     BROWSER:browser.py:65 Initializing WebDriver for browser: edge
+INFO     BASE_PAGE:base_page.py:19 Opening the url 'https://demoqa.com/'
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="home-banner"]//img"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that image "banner" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="category-cards"]//*[text()="Alerts, Frame & Windows"]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "category card"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[text()="Nested Frames"]/parent::*[contains(@class, "btn")]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "group element"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="framesWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="framesWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "Nested Frames"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//body"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "body" has text "Parent frame"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//body"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "body" has text "Child Iframe"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[text()="Frames"]/parent::*[contains(@class, "btn")]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "group element"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="framesWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="framesWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "Frames"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "sampleHeading"
+INFO     TEXT:text.py:21 Getting text "heading" inner text
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "sampleHeading"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "heading" has text "This is a sample page"

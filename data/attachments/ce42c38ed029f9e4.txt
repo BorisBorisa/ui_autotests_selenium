@@ -1,0 +1,22 @@
+INFO     BROWSER:browser.py:65 Initializing WebDriver for browser: chrome
+INFO     BASE_PAGE:base_page.py:19 Opening the url 'https://demoqa.com/'
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="home-banner"]//img"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that image "banner" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@class="category-cards"]//*[text()="Alerts, Frame & Windows"]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "category card"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[text()="Alerts"]/parent::*[contains(@class, "btn")]"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "group element"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="javascriptAlertsWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:47 Checking that text "title" is visible
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "//*[@id="javascriptAlertsWrapper"]/h1"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "title" has text "Alerts"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "alertButton"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "alert"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "confirmButton"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "confirm"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "confirmResult"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "confirm result" has text "You selected Ok"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "promtButton"
+INFO     BASE_ELEMENT:base_element.py:38 Click button "prompt"
+INFO     BASE_ELEMENT:base_element.py:30 Getting locator "promptResult"
+INFO     BASE_ELEMENT:base_element.py:55 Checking that text "prompt result" has text "You entered picture"
