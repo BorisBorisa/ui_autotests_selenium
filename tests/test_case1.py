@@ -1,14 +1,18 @@
+import allure
 import pytest
 
 from pages.main_page import MainPage
 from pages.alerts_frame_windows.alerts_page import AlertsPage
 
 from tools.fakers import fake
+from tools.allure.epics import AllureEpic
 
 from config import settings
 
 test_data = settings.test_data.test_case1
 
+
+@allure.epic(AllureEpic.ALERTS_FRAMES_WINDOWS)
 @pytest.mark.alert
 class TestCase1:
     def test_alerts(self, main_page: MainPage, alerts_page: AlertsPage):

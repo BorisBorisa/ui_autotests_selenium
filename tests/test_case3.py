@@ -1,12 +1,16 @@
+import allure
 import pytest
 
 from pages.main_page import MainPage
 from pages.elements.web_tables_page import WebTablesPage
 
 from tools.schemas.web_table_row_model import WebTableRow
+from tools.allure.epics import AllureEpic
 
 from config import settings
 
+
+@allure.epic(AllureEpic.ELEMENTS)
 @pytest.mark.element
 @pytest.mark.table
 class TestCase3:

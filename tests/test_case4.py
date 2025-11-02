@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from pages.main_page import MainPage
@@ -6,12 +7,14 @@ from pages.sample_page import SamplePage
 from pages.elements.links_page import LinksPage
 
 from tools.browser_tools.browser_windows import BrowserWindows
+from tools.allure.epics import AllureEpic
 
 from config import settings
 
 test_data = settings.test_data.test_case4
 
 
+@allure.epic(AllureEpic.ALERTS_FRAMES_WINDOWS, AllureEpic.ELEMENTS)
 @pytest.mark.element
 @pytest.mark.window
 @pytest.mark.link

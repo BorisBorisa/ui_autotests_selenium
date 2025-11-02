@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from pages.main_page import MainPage
@@ -5,14 +6,17 @@ from pages.widgets.slider_page import SliderPage
 from pages.widgets.progress_bar_page import ProgressBarPage
 
 from tools.fakers import fake
+from tools.allure.epics import AllureEpic
 
 from config import settings
 
+
+@allure.epic(AllureEpic.WIDGETS)
 @pytest.mark.widget
 @pytest.mark.slider
 @pytest.mark.progress_bar
 class TestCase5:
-    def test(self, main_page: MainPage, slider_page: SliderPage, progress_bar_page: ProgressBarPage):
+    def test_slider_progress_bar(self, main_page: MainPage, slider_page: SliderPage, progress_bar_page: ProgressBarPage):
         main_page.visit(settings.get_base_url())
         main_page.is_page_opened()
 

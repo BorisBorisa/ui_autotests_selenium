@@ -1,3 +1,4 @@
+import allure
 import pytest
 
 from pages.main_page import MainPage
@@ -6,8 +7,12 @@ from pages.alerts_frame_windows.frames_page import FramesPage
 
 from config import settings
 
+from tools.allure.epics import AllureEpic
+
 test_data = settings.test_data.test_case2
 
+
+@allure.epic(AllureEpic.ALERTS_FRAMES_WINDOWS)
 @pytest.mark.frame
 class TestCase2:
     def test_iframe(self, main_page: MainPage, nested_frames_page: NestedFramesPage, frames_page: FramesPage):
@@ -25,4 +30,3 @@ class TestCase2:
         frames_page.is_page_opened()
 
         frames_page.check_frames_headings_are_equal()
-
