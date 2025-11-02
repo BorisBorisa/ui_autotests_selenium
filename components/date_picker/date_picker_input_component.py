@@ -19,7 +19,7 @@ class DatePickerComponent(BaseComponent):
         self.month_select_menu = SelectMenu("month", By.CLASS_NAME, "react-datepicker__month-select")
         self.year_select_menu = SelectMenu("year", By.CLASS_NAME, "react-datepicker__year-select")
 
-        self.day = Text("day", By.XPATH, '//*[@class = "react-datepicker__month"]/*[{week_index}]/*[{day_index}]')
+        self.day = Text("day", By.XPATH, '//*[@class = "react-datepicker__month"]//*[contains(@aria-label, "{month} {day}th")]')
 
     def click_date_picker_input(self):
         self.date_picker_input.click()
@@ -38,12 +38,12 @@ class DatePickerComponent(BaseComponent):
     def select_date_via_calendar(self, target_date: datetime):
         self.click_date_picker_input()
 
-        self.month_select_menu.select_by_text(target_date.strftime("%B"))
+        month_str = target_date.strftime("%B")
+
+        self.month_select_menu.select_by_text(month_str)
         self.year_select_menu.select_by_text(str(target_date.year))
 
-        week_index = target_date.isocalendar()[1] - target_date.replace(day=1).isocalendar()[1] + 1
-        day_index = target_date.weekday() + 2
-        self.day.click(week_index=week_index, day_index=day_index)
+        self.day.click(month=month_str, day=target_date.day)
 
     @allure.step("Check that selected date equals expected date {expected_date}")
     def check_current_date_matches_expected(self, expected_date: datetime):
