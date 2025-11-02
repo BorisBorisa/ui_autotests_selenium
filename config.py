@@ -3,7 +3,7 @@ from enum import Enum
 from pydantic import HttpUrl, BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-from tools.schemas.test_data_model import TestData
+from tools.schemas.test_data_model import DataModel
 
 
 class Browser(str, Enum):
@@ -40,7 +40,7 @@ class Settings(BaseSettings):
     browsers: list[Browser]
     base_url: HttpUrl
     browsers_config: BrowsersConfig
-    test_data: TestData
+    test_data: DataModel
 
     def get_base_url(self):
         return f"{self.base_url}"
