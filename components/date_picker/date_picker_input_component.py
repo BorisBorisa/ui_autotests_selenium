@@ -19,7 +19,7 @@ class DatePickerComponent(BaseComponent):
         self.month_select_menu = SelectMenu("month", By.CLASS_NAME, "react-datepicker__month-select")
         self.year_select_menu = SelectMenu("year", By.CLASS_NAME, "react-datepicker__year-select")
 
-        self.day = Text("day", By.XPATH, '//*[@class = "react-datepicker__month"]//*[contains(@aria-label, "{month} {day}th")]')
+        self.day = Text("day", By.XPATH, '//*[@class = "react-datepicker__month"]//*[contains(@aria-label, "{month} {day}")]')
 
     def click_date_picker_input(self):
         self.date_picker_input.click()
